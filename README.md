@@ -30,13 +30,12 @@ https://discordapp.com/oauth2/authorize?client_id=你申請到的id&scope=bot
 ```
 
 #### 測試
+下載並移至專案目錄下
 ```
-git clone 
-```
-```
+git clone https://github.com/kwei/Discord_Lyrics_Robot.git
 cd Discord_Lyrics_Robot
 ```
-安裝套件 (request：請求 HTML & jssoup：爬蟲用)
+安裝所需套件 (request：請求 HTML & jssoup：爬蟲用)
 ```
 npm install request jssoup
 ```
@@ -54,14 +53,9 @@ npm start
 
 ____
 
-## 近期目標
+## 未來目標
   * 增加功能，使得多樣化
-  * 精簡程式碼
-  * 清理多餘的套件
-  * 整理出開發工具套件
   * 將伺服器架於 GCP
-  * 提供多元搜尋管道
-  * 改良使用介面
 
 ## 版本 :clock9:
 
