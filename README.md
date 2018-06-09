@@ -26,7 +26,10 @@
 
 #### 可以藉由[此網址](https://discordapp.com/oauth2/authorize?client_id=448479589132402698&scope=bot)將機器人引入至自己的伺服器中
 
-#### 當申請完 Discord 的機器人後填入下方的連結並於瀏覽器開啟，就能將自己的機器人加入伺服器中。
+#### 當申請完 Discord 的機器人後填入下方的連結並於瀏覽器開啟，就能將自己的機器人加入伺服器中。 
+```
+打上 $help 將能看到使用方法
+```
 ```
 https://discordapp.com/oauth2/authorize?client_id=你申請到的id&scope=bot
 ```
