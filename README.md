@@ -21,10 +21,15 @@
 第一個寫的聊天機器人，專屬於 Discord 。利用 Discord 官方的 API 自己架設了一台 BOT 並實作出搜尋歌詞的功能。
 可參照 index.js 裡面的指令引用方式自行擴增指令集。command 資料夾內是指令的檔案而 function 資料夾內是將會用到的函式。
 若要自己創造一台機器人必須透過 Discord 官方申請然後取得 token 與 id 才能使用。
-
-可以藉由網址以下網址將機器人引入至自己的伺服器中
-https://discordapp.com/oauth2/authorize?client_id=448479589132402698&scope=bot
 ``` 
+可以藉由網址以下網址將機器人引入至自己的伺服器中</br>
+[點我](https://discordapp.com/oauth2/authorize?client_id=448479589132402698&scope=bot)
+
+當申請完 Discord 的機器人後填入下方的連結並於瀏覽器開啟，就能將自己的機器人加入伺服器中。
+```
+https://discordapp.com/oauth2/authorize?client_id=你申請到的id&scope=bot
+```
+____
 
 ## 近期目標
   * 增加功能，使得多樣化
