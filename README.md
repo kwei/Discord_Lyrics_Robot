@@ -28,6 +28,30 @@
 ```
 https://discordapp.com/oauth2/authorize?client_id=你申請到的id&scope=bot
 ```
+
+#### 測試
+```
+git clone 
+```
+```
+cd Discord_Lyrics_Robot
+```
+安裝套件 (request：請求 HTML & jssoup：爬蟲用)
+```
+npm install request jssoup
+```
+設定 config 檔案，例如：
+```JSON
+{
+  "token": "你申請到的tocken",
+  "prefix": "$"
+}
+```
+執行
+```
+npm start
+```
+
 ____
 
 ## 近期目標
