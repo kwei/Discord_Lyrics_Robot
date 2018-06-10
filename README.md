@@ -1,4 +1,4 @@
-# Discord_Lyrics_Robot
+# Discord_Lyrics_Robot ![負電拍拍](https://cf-amod9fa3ka.zi.org.tw/wp-content/uploads/2017/12/1513334552-487d82e3050ff4dcd5e09d3b7a59d2d7.gif)
 
 [![NPM version][shield-npm]](#)
 [![Node.js version support][shield-node]](#)
