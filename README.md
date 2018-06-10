@@ -25,15 +25,11 @@
 [Discord developers](https://discordapp.com/developers/docs/intro)
 
 #### 可以藉由[此網址](https://discordapp.com/oauth2/authorize?client_id=448479589132402698&scope=bot)將機器人引入至自己的伺服器中
-</br>引入伺服器</br>
+</br>引入伺服器</br></br>
 ![link](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/linkBOT.PNG)</br>
-</br>使用說明</br>
-```
-打上 $help 將能看到使用方法
-```
-</br>
+</br>使用說明</br></br>
 ![help](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/help.PNG)</br>
-</br>查詢歌詞</br>
+</br>查詢歌詞</br></br>
 ![search](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/lyrics.PNG)</br></br>
 
 #### 當申請完 Discord 的機器人後填入下方的連結並於瀏覽器開啟，就能將自己的機器人加入伺服器中。 
