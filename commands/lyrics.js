@@ -13,7 +13,6 @@ let prefix = botconfig.prefix;
 module.exports.run = async (bot, message, args) => {
 
   song_name = args.join(" ").slice(prefix.length - 1);
-  console.log('\n\t' + song_name);
 
   var options = {
     url: encodeURI(search_page + song_name),
@@ -28,12 +27,10 @@ module.exports.run = async (bot, message, args) => {
       soup.hidden = 'false';
       var tags = soup.nextElement.nextElement;
       var count = 1;
-      console.log("==============================================\n");
       while(tags != null){
         if(tags.name === 'a'){
           if(tags.attrs.title === song_name){
             if(count === 1){
-              console.log(ROOT + tags.attrs.href);
                 lyrics_page = ROOT + tags.attrs.href;
                 Request_byURL(message, lyrics_page);
             }
@@ -45,7 +42,6 @@ module.exports.run = async (bot, message, args) => {
               tags = tags.nextElement;
             }
             if(count === 1){
-              console.log(ROOT + tags.attrs.href);
               var lyrics_page = (ROOT + tags.attrs.href);
 
               Request_byURL(message, lyrics_page);
@@ -59,7 +55,6 @@ module.exports.run = async (bot, message, args) => {
         }
         tags = tags.nextElement;
       }
-      console.log("\n==============================================");
     }
   }
   request(options, callback);
