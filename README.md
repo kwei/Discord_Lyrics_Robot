@@ -84,4 +84,5 @@ License
 
 Paddington is licensed under the [MIT](#) license.  
 Copyright &copy; 2018, KW
+© 2013-2018 AppleAlmond
 
