@@ -28,7 +28,11 @@
 </br>引入伺服器</br></br>
 ![link](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/linkBOT.PNG)</br>
 </br>使用說明</br></br>
-![help](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/help.PNG)</br>
+
+```
+輸入 $help 就能看見使用規則
+```
+
 </br>查詢歌詞</br></br>
 ![search](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/lyrics.PNG)</br></br>
 
