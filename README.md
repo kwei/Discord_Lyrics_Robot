@@ -17,7 +17,7 @@
 [shield-build]: https://img.shields.io/badge/build-passing-brightgreen.svg
 
 ## 簡介
-```JavaScript
+```
 這是一個專屬於 Discord 的聊天機器人，利用 Discord 官方的 API 自己架設一台 BOT 並實作出搜尋歌詞的功能。
 可參照 index.js 裡面的指令引用方式自行擴增指令集。command 資料夾內是指令的檔案而 function 資料夾內是會用到的函式。
 若要自己創造一台機器人必須透過 Discord 官方申請然後取得 token 與 id 才能使用。
