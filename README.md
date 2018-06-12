@@ -51,10 +51,10 @@ cd Discord_Lyrics_Robot
 ```
 npm install request jssoup
 ```
-手動新增 config 檔案，如下：
+手動新增 botconfig.json 檔案，如下：
 ```JSON
 {
-  "token": "你申請到的tocken",
+  "token": "你申請到的token",
   "prefix": "$"
 }
 ```
