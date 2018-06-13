@@ -4,11 +4,11 @@ module.exports.run = async (bot, message, args) => {
 
   let bicon = bot.user.displayAvatarURL;
   let botembed = new Discord.RichEmbed()
-    .setDescription("關於我")
+    .setDescription("About me")
     .setColor("#15f153")
     .setThumbnail(bicon)
-    .addField("我的名字", bot.user.username)
-    .addField("出生於", bot.user.createdAt);
+    .addField("My name", bot.user.username)
+    .addField("born", bot.user.createdAt);
 
     message.channel.send(botembed);
 }

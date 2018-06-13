@@ -19,8 +19,6 @@ module.exports = function Request_byURL(message, lyrics_page){
         if(tags.name === 'p'){
           if(tags.attrs.class === 'lyrics'){
             tag = 1;
-            console.log(tags.text);
-            console.log("\n==============================================");
             message.channel.send(tags.text.slice(0,(tags.text.length / 2) - 1));
             message.channel.send(tags.text.slice((tags.text.length / 2),tags.text.length));
           }
@@ -28,7 +26,7 @@ module.exports = function Request_byURL(message, lyrics_page){
         tags = tags.nextElement;
       }
       if(tag === -1){
-        message.channel.send("找不到 嗚嗚嗚嗚嗚");
+        message.channel.send("Can't find it!");
       }
     }
   }
