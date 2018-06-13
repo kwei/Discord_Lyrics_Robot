@@ -7,12 +7,14 @@ function removeHtmlTags(str) {
   str = str.replace(/&gt;/ig,'\<');
   str = str.replace(/&lt;/ig,'\>');
   str = str.replace(/amp;/ig,'\&');
+  str = str.replace(/&quot;/ig,'\"');
+  str = str.replace(/\r?\n/g, '<br />');
   str = str.replace('※ Mojim.com　魔鏡歌詞網 ','');
   str = str.replace('更多更詳盡歌詞 在','');
   return str;
 }
 
-module.exports = function Request_byURL(message, lyrics_page, cb){
+module.exports = function Request_byURL_spare(message, lyrics_page, cb){
   var options = {
     url: encodeURI(lyrics_page),
     headers: {
@@ -27,8 +29,8 @@ module.exports = function Request_byURL(message, lyrics_page, cb){
       soup.hidden = 'false';
       var tags = soup.nextElement.nextElement;
       while(tags != null){
-        if(tags.name === 'p'){
-          if(tags.attrs.class === 'lyrics'){
+        if(tags.name === 'dd'){
+          if(tags.attrs.class === 'fsZx3' && tags.attrs.id === 'fsZx3'){
             console.log("[ found lyrics ]");
             tag = 1;
             console.log(removeHtmlTags(tags.text));
@@ -42,14 +44,13 @@ module.exports = function Request_byURL(message, lyrics_page, cb){
         tags = tags.nextElement;
       }
       if(tag === -1){
-        console.log("kkbox not found");
+        console.log("morjin not found");
         cb(false);
       }
     }else{
-      console.log("kkbox" + response.statusCode);
       cb(false);
     }
   }
-  console.log("[ kkbox search ]");
+
   request(options, callback);
 }
