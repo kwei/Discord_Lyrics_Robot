@@ -38,16 +38,6 @@ bot.on("message", async (message) => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-  // if(cmd === `${prefix}MJ`){
-  //   return message.channel.send("O_O");
-  // }else if(cmd === `${prefix}然後呢`){
-  //   return message.channel.send("他們說妳的心似乎痊癒了。");
-  // }else if(cmd === `${prefix}真的是`){
-  //   return message.channel.send("會被妳給氣死ㄟ");
-  // }else if(cmd === `${prefix}學弟的覽趴`){
-  //   return message.channel.send("好ㄘ");
-  // }
-
   let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(bot, message, args);
 
