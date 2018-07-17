@@ -28,6 +28,8 @@
 </br>引入伺服器</br></br>
 ![link](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/linkBOT.PNG)</br>
 </br>使用說明</br></br>
+#### 或是使用 QR code </br>
+![qrcode](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/QR.PNG)
 
 ```
 輸入 $help 就能看見使用規則
