@@ -4,6 +4,8 @@ const botconfig = require("./botconfig.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 
+const {song_learning} = require('./functions/song_learning.js');
+
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 
@@ -38,9 +40,31 @@ bot.on("message", async (message) => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-  let commandfile = bot.commands.get(cmd.slice(prefix.length));
-  if(commandfile) commandfile.run(bot, message, args);
+  if(cmd === `${prefix}吃覽趴囉`){
+    return message.channel.send(`${message.author} 吃起來`);
+  }
+  else if(cmd === `${prefix}然後呢`){
+    return message.channel.send(`他們說 ${message.author} 的心似乎痊癒了。`);
+  }else if(cmd === `${prefix}真的是`){
+    return message.channel.send(`會被 ${message.author} 給氣死ㄟ`);
+  }else if(cmd === `${prefix}學弟的覽趴`){
+    return message.channel.send(`沒有 ${message.author} 的好吃啦 <3`);
+  }
 
+  if(cmd.includes(`${prefix}`)){
+    let commandfile = bot.commands.get(cmd.slice(prefix.length));
+    if(commandfile) commandfile.run(bot, message, args);
+  }else if(cmd.includes(`!find`) || cmd.includes(`$find`)){
+    let song_name = args.join(" ").slice(`!find`);
+    console.log("\nsong name : " + song_name);
+    song_learning(message, song_name, function callback(results){
+      console.log(results);
+    });
+  }
+});
+
+bot.on('error', async (error) => {
+  console.log(error);
 });
 
 bot.login(botconfig.token);

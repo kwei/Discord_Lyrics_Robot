@@ -35,9 +35,12 @@ module.exports = function Request_byURL_spare(message, lyrics_page, cb){
             tag = 1;
             console.log(removeHtmlTags(tags.text));
             console.log("\n==============================================");
-            message.channel.send(removeHtmlTags(tags.text.slice(0,(tags.text.length / 2))));
-            message.channel.send(removeHtmlTags(tags.text.slice((tags.text.length / 2),tags.text.length)));
-            cb(true);
+            if(tags.text.length > 1500){
+              message.channel.send(removeHtmlTags(tags.text.slice(0,1499)));
+              message.channel.send(removeHtmlTags(tags.text.slice(1499, tags.text.length)));
+            }else{
+                message.channel.send(removeHtmlTags(tags.text));
+            }
             break;
           }
         }
