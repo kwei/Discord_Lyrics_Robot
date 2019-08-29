@@ -2,26 +2,14 @@ var request = require('request');
 var JSSoup = require('jssoup').default;
 const botconfig = require("../botconfig.json");
 
-function removeHtmlTags(str) {
-  str = str.replace(/&nbsp;/ig,'');
-  str = str.replace(/&#039;/ig,'\'');
-  str = str.replace(/&gt;/ig,'\<');
-  str = str.replace(/&lt;/ig,'\>');
-  str = str.replace(/amp;/ig,'\&');
-  str = str.replace('※ Mojim.com　魔鏡歌詞網 ','');
-  str = str.replace('更多更詳盡歌詞 在','');
-  return str;
-}
-
 const ROOT_SPARE = 'https://mojim.com'
 const search_tail = '.html?t4';
 
 const Request_byURL_spare = require('./Request_byURL_spare.js');
 
 let prefix = botconfig.prefix;
-var isfound = true;
 
-module.exports = function Lyrics_Main(message, song_name, cb){
+module.exports = function Lyrics_Main(message, song_name){
   console.log(encodeURI(ROOT_SPARE + '/' + song_name.toString() + search_tail));
   var options_spare = {
     url: encodeURI(ROOT_SPARE + '/' + song_name.toString() + search_tail),
@@ -55,17 +43,10 @@ module.exports = function Lyrics_Main(message, song_name, cb){
                   console.log(ROOT_SPARE + tags.nextElement.nextElement.nextElement.nextElement.attrs.href);
                   var lyrics_page = ROOT_SPARE + tags.nextElement.nextElement.nextElement.nextElement.attrs.href;
                   console.log("[ found in morjin ]");
-                  Request_byURL_spare(message, lyrics_page, function(result){
-                    console.log(result);
-                    isfound = result;
-                    if(!result){
-                      cb(result);
-                    }
-                  });
+                  Request_byURL_spare(message, song_name, lyrics_page);
                   break;
                 }
-              }
-              catch(e){
+              }catch(e){
                 // message.channel.send("Can't find!");
               }
             }

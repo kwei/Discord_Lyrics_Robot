@@ -6,9 +6,8 @@ module.exports.run = async (bot, message, args) => {
     .setDescription("Commands")
     .setColor("#0000e3")
     .addField("[ $lyrics ]", "ex :  $lyrics song-name")
-    .addField("[ $Info ]", "ex :  $Info");
 
-  message.channel.send(usage);
+  message.channel.send("$lyrics song-name");
 }
 
 module.exports.help = {

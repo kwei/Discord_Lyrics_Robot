@@ -11,7 +11,7 @@ const Lyrics_Main = require('../functions/lyrics_main.js');
 let prefix = botconfig.prefix;
 var isfound = true;
 
-module.exports = function Lyrics_Spare(message, song_name, cb){
+module.exports = function Lyrics_Spare(message, song_name){
   console.log(encodeURI(search_page + song_name.toString()));
   var options = {
     url: encodeURI(search_page + song_name.toString()),
@@ -44,7 +44,7 @@ module.exports = function Lyrics_Spare(message, song_name, cb){
               var lyrics_page = ROOT + tags.attrs.href;
               console.log("[ found in first ]");
               tag = 1;
-              Request_byURL(message, lyrics_page, function(result){
+              Request_byURL(message, song_name, lyrics_page, function(result){
                 console.log(result);
                 isfound = result;
                 if(!isfound){
@@ -67,16 +67,11 @@ module.exports = function Lyrics_Spare(message, song_name, cb){
                           var lyrics_page = (ROOT + tags.attrs.href);
                           console.log("[ found second ]");
                           tag = 1;
-                          Request_byURL(message, lyrics_page, function(result){
+                          Request_byURL(message, song_name, lyrics_page, function(result){
                             console.log(result);
                             isfound = result;
-                            cb(result);
                             if(!result){
-                              Lyrics_Main(message, song_name, function(result){
-                                if(!result){
-                                  message.channel.send("Can't find!");
-                                }
-                              });
+                              Lyrics_Main(message, song_name);
                             }
                           });
                           break;
@@ -87,11 +82,7 @@ module.exports = function Lyrics_Spare(message, song_name, cb){
                     }
                     tags = tags.nextElement;
                     if(tags === null){
-                      Lyrics_Main(message, song_name, function(result){
-                        if(!result){
-                          message.channel.send("Can't find!");
-                        }
-                      });
+                      Lyrics_Main(message, song_name);
                     }
                   }
                 }
@@ -117,5 +108,4 @@ module.exports = function Lyrics_Spare(message, song_name, cb){
   }
   console.log("[ search 1 ]");
   request(options, callback);
-  cb(" ");
 }

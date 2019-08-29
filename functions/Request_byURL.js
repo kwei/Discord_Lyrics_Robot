@@ -1,5 +1,8 @@
 var request = require('request');
 var JSSoup = require('jssoup').default;
+var moment = require('moment');
+
+var DB = require('../model/db_interface.js');
 
 function removeHtmlTags(str) {
   str = str.replace(/&nbsp;/ig,'');
@@ -12,7 +15,8 @@ function removeHtmlTags(str) {
   return str;
 }
 
-module.exports = function Request_byURL(message, lyrics_page, cb){
+module.exports = function Request_byURL(message, song_name, lyrics_page, cb){
+
   var options = {
     url: encodeURI(lyrics_page),
     headers: {
@@ -39,6 +43,21 @@ module.exports = function Request_byURL(message, lyrics_page, cb){
             }else{
                 message.channel.send(removeHtmlTags(tags.text));
             }
+
+            let data = {
+              dbURL: "mongodb://localhost:27017",
+              dbName: "discord",
+              tableName: message.author.username,
+              obj: {
+                user: message.author.username,
+                timecode: moment().format('MM/DD/YYYY'),
+                songname: song_name.toString(),
+                lyrics: removeHtmlTags(tags.text)
+              }
+            };
+
+            DB.addElement(data);
+
             cb(true);
             break;
           }
