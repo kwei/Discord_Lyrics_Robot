@@ -24,13 +24,10 @@
 ``` 
 [Discord developers](https://discordapp.com/developers/docs/intro)
 
-#### 可以藉由[此網址](https://discordapp.com/oauth2/authorize?client_id=448479589132402698&scope=bot)將機器人引入至自己的伺服器中
+#### 可以藉由[此網址](https://discordapp.com/oauth2/authorize?client_id=619075887685697536&scope=bot)將機器人引入至自己的伺服器中
 </br>引入伺服器</br></br>
 ![link](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/linkBOT.PNG)</br>
 </br>使用說明</br></br>
-#### 或是使用 QR code </br>
-![qrcode](https://github.com/kwei/Discord_Lyrics_Robot/blob/master/QR.PNG)
-
 ```
 輸入 $help 就能看見使用規則
 ```
