@@ -15,7 +15,7 @@
     "facebook-chat-api": "^1.6.0",
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "^4.0.0",
-    "googleapis": "^27.0.0",
+    "googleapis": "^39.1.0",
     "html-to-json": "^0.6.0",
     "js-crawler": "^0.3.20",
     "jssoup": "0.0.8",
